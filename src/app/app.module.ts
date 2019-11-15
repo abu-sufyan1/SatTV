@@ -14,7 +14,6 @@ import { SubscribeSpecialComponent } from './subscribe-special/subscribe-special
 import { SubscribtionDetailComponent } from './subscribtion-detail/subscribtion-detail.component';
 import { UserDetailUpdateComponent } from './user-detail-update/user-detail-update.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { Data } from './constants/data.constants/data.constants.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,7 @@ import { Data } from './constants/data.constants/data.constants.component';
     SubscribeSpecialComponent,
     SubscribtionDetailComponent,
     UserDetailUpdateComponent,
-    DashboardComponent,
-    Data.ConstantsComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
