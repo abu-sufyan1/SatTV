@@ -1,3 +1,6 @@
 <div class="text-center display-data">
-    Your current account balance :  {{accountBalance}}
+    <div *ngIf="showWarningMessage">
+        Warning!!!. Please recharge your account.
+    </div>
+    Your current account balance : {{accountBalance}}
 </div>

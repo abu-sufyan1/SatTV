@@ -17,6 +17,7 @@ export class RechargeComponent implements OnInit {
     this.rechargeForm = this.formBuilder.group({
       amount: [null, Validators.compose([Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)])]
     })
+
   }
   rechargeAccount() {
     this.userData.setAccountBalance(+this.rechargeForm.controls['amount'].value + this.userData.accountBalanceSubject.value);

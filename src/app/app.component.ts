@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserDataService } from './services/user-data.service';
 import { TVService } from './models/tvservice.data';
 import { UserData } from './models/user.data';
@@ -9,6 +9,7 @@ import { UserData } from './models/user.data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'SatTV';
 
   user: UserData = {
