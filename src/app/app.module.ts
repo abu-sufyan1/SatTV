@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +16,7 @@ import { SubscribeSpecialComponent } from './subscribe-special/subscribe-special
 import { SubscribtionDetailComponent } from './subscribtion-detail/subscribtion-detail.component';
 import { UserDetailUpdateComponent } from './user-detail-update/user-detail-update.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToastyComponent } from './toasty/toasty.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SubscribeSpecialComponent,
     SubscribtionDetailComponent,
     UserDetailUpdateComponent,
-    DashboardComponent
+    DashboardComponent,
+    ToastyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

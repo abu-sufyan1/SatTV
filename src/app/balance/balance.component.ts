@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
   selector: 'app-balance',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BalanceComponent implements OnInit {
 
-  constructor() { }
+  accountBalance: number;
+  constructor(private userData: UserDataService) { }
 
   ngOnInit() {
+    this.userData.accountBalance.subscribe(
+      (balance: number) => {
+        this.accountBalance = balance;
+      }
+    )
   }
 
 }

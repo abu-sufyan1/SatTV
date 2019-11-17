@@ -1,1 +1,13 @@
-<p>recharge works!</p>
+<div class="mt-5">
+  <form [formGroup]="rechargeForm" (ngSubmit)="rechargeAccount()">
+    <div class="form-group">
+      <label for="rechargeAmount">Enter Amount:</label>
+      <input type="text" formControlName="amount" class="form-control" id="rechargeAmount" placeholder="Enter amount"
+        name="rechargeAmount">
+      <div *ngIf="!rechargeForm.controls['amount'].valid && rechargeForm.controls['amount'].touched">Please enter
+        correct
+        amount</div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!rechargeForm.valid">Submit</button>
+  </form>
+</div>

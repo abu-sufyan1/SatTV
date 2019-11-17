@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserDataService } from './services/user-data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SatTV';
+  initialAccountBalance: number = 100;
+
+  constructor(private userData: UserDataService) {
+    this.userData.setAccountBalance(this.initialAccountBalance);
+  }
 }

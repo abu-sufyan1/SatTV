@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center">
+    <div class="alert w-50 {{toastyService.toastyClass}}" [class.d-none]="!toasty">
+        {{toastyService.message}} <a class="close" (click)="closeToasty()">×</a>
+    </div>
+</div>
