@@ -11,7 +11,7 @@ export class RechargeComponent implements OnInit {
 
   rechargeForm: FormGroup;
   constructor(private userData: UserDataService, private formBuilder: FormBuilder,
-    private toastyService: ToastyService) { }
+    public toastyService: ToastyService) { }
 
   ngOnInit() {
     this.rechargeForm = this.formBuilder.group({

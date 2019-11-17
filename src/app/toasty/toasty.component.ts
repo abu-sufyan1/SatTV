@@ -13,7 +13,7 @@ export class ToastyComponent implements OnInit {
     return this._toasty;
   }
 
-  constructor(private toastyService: ToastyService) { }
+  constructor(public toastyService: ToastyService) { }
 
   ngOnInit() {
     this.toastyService.toastySubject.subscribe(
