@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../services/user-data.service';
-import { TVService } from '../models/tv.service';
+import { TVService } from '../models/tvservice.data';
 import { filter } from 'rxjs/operators';
 
 @Component({

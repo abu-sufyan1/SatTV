@@ -1,4 +1,4 @@
-export class TVService {
+export interface TVService {
     serviceId: number;
     serviceName: string;
     serviceCharge: number;

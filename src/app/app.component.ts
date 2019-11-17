@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserDataService } from './services/user-data.service';
-import { TVService } from './models/tv.service';
+import { TVService } from './models/tvservice.data';
+import { UserData } from './models/user.data';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,11 @@ import { TVService } from './models/tv.service';
 })
 export class AppComponent {
   title = 'SatTV';
+
+  user: UserData = {
+    userName: 'Sufyan',
+    email: 'absufyn@gmail.com'
+  }
 
   initialAccountBalance: number = 100;
 
@@ -87,6 +93,9 @@ export class AppComponent {
     }
     if (localStorage.getItem('specialPack') === null) {
       this.userData.setSpecialPack(this.specialServicePack);
+    }
+    if (localStorage.getItem('userdata') === null) {
+      this.userData.setUserData(this.user);
     }
   }
 }
