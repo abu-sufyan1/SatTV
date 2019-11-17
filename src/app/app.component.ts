@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserDataService } from './services/user-data.service';
+import { TVService } from './models/tv.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,84 @@ import { UserDataService } from './services/user-data.service';
 })
 export class AppComponent {
   title = 'SatTV';
+
   initialAccountBalance: number = 100;
 
+  baseServicePack: TVService[] = [
+    {
+      serviceId: 1,
+      serviceName: 'DoorDarshan',
+      serviceCharge: 5,
+      subscribed: false
+    },
+    {
+      serviceId: 2,
+      serviceName: 'ETV Marathi',
+      serviceCharge: 5,
+      subscribed: false
+    },
+  ];
+
+  specialServicePack: TVService[] = [
+    {
+      serviceId: 3,
+      serviceName: 'English Learning Course',
+      serviceCharge: 50,
+      subscribed: false
+    },
+    {
+      serviceId: 4,
+      serviceName: 'German Learning Course',
+      serviceCharge: 70,
+      subscribed: false
+    }
+  ];
+
+  channels: TVService[] = [
+    {
+      serviceId: 5,
+      serviceName: 'Zee TV',
+      serviceCharge: 15,
+      subscribed: false
+    },
+    {
+      serviceId: 6,
+      serviceName: 'Star Plus',
+      serviceCharge: 15,
+      subscribed: false
+    },
+    {
+      serviceId: 7,
+      serviceName: 'Ten Sports',
+      serviceCharge: 15,
+      subscribed: false
+    },
+    {
+      serviceId: 8,
+      serviceName: 'Zee Cinema',
+      serviceCharge: 15,
+      subscribed: false
+    },
+    {
+      serviceId: 9,
+      serviceName: 'Star Sports',
+      serviceCharge: 15,
+      subscribed: false
+    }
+  ]
+
   constructor(private userData: UserDataService) {
-    this.userData.setAccountBalance(this.initialAccountBalance);
+    if (localStorage.getItem('accountBalance') === null) {
+      this.userData.setAccountBalance(this.initialAccountBalance);
+    }
+    if (localStorage.getItem('channels') === null) {
+      this.userData.setChannels(this.channels);
+    }
+    if (localStorage.getItem('basePack') === null) {
+      this.userData.setBasePack(this.baseServicePack);
+    }
+    if (localStorage.getItem('specialPack') === null) {
+      this.userData.setSpecialPack(this.specialServicePack);
+    }
   }
 }

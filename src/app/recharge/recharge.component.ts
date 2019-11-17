@@ -19,7 +19,7 @@ export class RechargeComponent implements OnInit {
     })
   }
   rechargeAccount() {
-    this.userData.setAccountBalance(+this.rechargeForm.controls['amount'].value + this.userData.accountBalance.value);
+    this.userData.setAccountBalance(+this.rechargeForm.controls['amount'].value + this.userData.accountBalanceSubject.value);
     this.toastyService.showToasty('Recharge Successfull!!', 'alert-success')
   }
 }

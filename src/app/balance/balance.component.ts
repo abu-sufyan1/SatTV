@@ -12,7 +12,7 @@ export class BalanceComponent implements OnInit {
   constructor(private userData: UserDataService) { }
 
   ngOnInit() {
-    this.userData.accountBalance.subscribe(
+    this.userData.accountBalanceSubject.subscribe(
       (balance: number) => {
         this.accountBalance = balance;
       }
