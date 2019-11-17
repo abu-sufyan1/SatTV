@@ -1,1 +1,43 @@
-<p>subscribe-special works!</p>
+<div class="mt-2">
+        <div class="container">
+            <div>
+                <div class="subscription-name">Special Subscription</div>
+                <table class="table table-striped border">
+                    <thead>
+                        <tr>
+                            <th>Id
+                            </th>
+                            <th>Service Name
+                            </th>
+                            <th>Charge
+                            </th>
+                            <th>Subscribed
+                            </th>
+                            <th>Subscribe
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let service of specialService; let i=index;">
+                            <td>
+                                {{service.serviceId}}
+                            </td>
+                            <td>
+                                {{service.serviceName}}
+                            </td>
+                            <td>
+                                {{service.serviceCharge | currency}}
+                            </td>
+                            <td>
+                                {{service.subscribed ? 'Yes': 'No'}}
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary" [disabled]="service.subscribed"
+                                    (click)="subscribe(i)">Subscribe</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
