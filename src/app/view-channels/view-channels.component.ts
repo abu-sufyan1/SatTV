@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataService } from '../services/user-data.service';
+import { TVService } from '../models/tv.service';
 
 @Component({
   selector: 'app-view-channels',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewChannelsComponent implements OnInit {
 
-  constructor() { }
+  baseServicePack: TVService[] = [];
+  specialServicePack: TVService[] = [];
+  channels: TVService[] = [];
+
+  constructor(private userData: UserDataService) { }
 
   ngOnInit() {
+    this.userData.baseServicePackSubject.subscribe(
+      (baseServicePack: TVService[]) => this.baseServicePack = baseServicePack
+    )
+    this.userData.specialServicePackSubject.subscribe(
+      (specialServicePack: TVService[]) => this.specialServicePack = specialServicePack
+    )
+    this.userData.channelsSubject.subscribe(
+      (channels: TVService[]) => this.channels = channels
+    )
   }
-
 }

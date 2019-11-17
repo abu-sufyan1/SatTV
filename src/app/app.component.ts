@@ -30,13 +30,13 @@ export class AppComponent {
   specialServicePack: TVService[] = [
     {
       serviceId: 3,
-      serviceName: 'English Learning Course',
+      serviceName: 'English Learning',
       serviceCharge: 50,
       subscribed: false
     },
     {
       serviceId: 4,
-      serviceName: 'German Learning Course',
+      serviceName: 'German Learning',
       serviceCharge: 70,
       subscribed: false
     }

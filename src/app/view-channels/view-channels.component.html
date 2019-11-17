@@ -1,1 +1,103 @@
-<p>view-channels works!</p>
+<div class="container">
+    <div>
+        <div class="subscription-name">Base Subscription</div>
+        <table class="table table-striped border">
+            <thead>
+                <tr>
+                    <th>Id
+                    </th>
+                    <th>Service Name
+                    </th>
+                    <th>Charge
+                    </th>
+                    <th>Subscribed
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of baseServicePack">
+                    <td>
+                        {{service.serviceId}}
+                    </td>
+                    <td>
+                        {{service.serviceName}}
+                    </td>
+                    <td>
+                        {{service.serviceCharge | currency}}
+                    </td>
+                    <td>
+                        {{service.subscribed ? 'Yes': 'No'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <div class="subscription-name">Special Subscription</div>
+        <table class="table table-striped border">
+            <thead>
+                <tr>
+                    <th>Id
+                    </th>
+                    <th>Service Name
+                    </th>
+                    <th>Charge
+                    </th>
+                    <th>Subscribed
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of specialServicePack">
+                    <td>
+                        {{service.serviceId}}
+                    </td>
+                    <td>
+                        {{service.serviceName}}
+                    </td>
+                    <td>
+                        {{service.serviceCharge | currency}}
+                    </td>
+                    <td>
+                        {{service.subscribed ? 'Yes': 'No'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <div class="subscription-name">Channels</div>
+        <table class="table table-striped border">
+            <thead>
+                <tr>
+                    <th>Id
+                    </th>
+                    <th>Service Name
+                    </th>
+                    <th>Charge
+                    </th>
+                    <th>Subscribed
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of channels">
+                    <td>
+                        {{service.serviceId}}
+                    </td>
+                    <td>
+                        {{service.serviceName}}
+                    </td>
+                    <td>
+                        {{service.serviceCharge | currency}}
+                    </td>
+                    <td>
+                        {{service.subscribed ? 'Yes': 'No'}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
