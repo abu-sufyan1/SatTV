@@ -1,8 +1,8 @@
 <div class="d-flex flex-row justify-content-around flex-wrap">
-    <div class="tile text-center" routerLink='/balance'>
-        View current balance in the account
+    <div *ngFor="let item of urlAndBanner" class="tile text-center" [routerLink]='item.url'>
+        {{item.banner}}
     </div>
-    <div class="tile text-center" routerLink='/recharge'>
+    <!-- <div class="tile text-center" routerLink='/recharge'>
         Recharge Account
     </div>
     <div class="tile text-center" routerLink='/view-channels'>
@@ -22,5 +22,5 @@
     </div>
     <div class="tile text-center" routerLink='/user-detail'>
         Update email and phone number for notifications
-    </div>
+    </div> -->
 </div>

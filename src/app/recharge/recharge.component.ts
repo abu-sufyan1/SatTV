@@ -15,11 +15,12 @@ export class RechargeComponent implements OnInit {
 
   ngOnInit() {
     this.rechargeForm = this.formBuilder.group({
-      amount: [null, Validators.compose([Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)])]
+      amount: [null, Validators.compose([Validators.required, Validators.min(10), Validators.pattern(/^-?(0|[1-9]\d*)?$/)])]
     })
 
   }
   rechargeAccount() {
+    // if (this.rechargeForm.controls['amount'].value < )
     this.userData.setAccountBalance(+this.rechargeForm.controls['amount'].value + this.userData.accountBalanceSubject.value);
     this.toastyService.showToasty('Recharge Successfull!!', 'alert-success')
   }
